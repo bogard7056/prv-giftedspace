@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ギフテッドスペースは、市川市で活動する生きづらさを抱える若者と家族のためのサードプレイス。心理的安全性のある居場所で、PC教室やAIバイブコーディングを通じて新しい可能性を探します。">
+    <meta name="keywords" content="ギフテッドスペース, 市川市, 若者支援, サードプレイス, 居場所, 引きこもり支援, 不登校, NPO">
+    <meta property="og:title" content="ギフテッドスペース | 市川市・若者と家族のサードプレイス">
+    <meta property="og:description" content="土曜日、家族以外のだれかと話せる場所。どんな人にも可能性がある。">
+    <meta property="og:type" content="website">
+    <title>ギフテッドスペース | 市川市・若者と家族のサードプレイス</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#EFF6FF',
+                            100: '#DBEAFE',
+                            200: '#BFDBFE',
+                            300: '#93C5FD',
+                            400: '#60A5FA',
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                            700: '#1D4ED8',
+                        },
+                        warm: {
+                            50: '#FFFBEB',
+                            100: '#FEF3C7',
+                            200: '#FDE68A',
+                            300: '#FCD34D',
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            orange: '#F97316',
+                        },
+                        sage: {
+                            50: '#F0FDF4',
+                            100: '#DCFCE7',
+                            200: '#BBF7D0',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out infinite 2s',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'gradient': 'gradient 8s ease infinite',
+                        'fade-up': 'fadeUp 0.8s ease-out forwards',
+                        'scale-in': 'scaleIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(0.9)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Google Fonts: Noto Sans JP -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div
+                    class="w-12 h-12 bg-gradient-to-tr from-primary-500 via-purple-400 to-warm-orange rounded-2xl flex items-center justify-center shadow-lg shadow-primary-200/50 group-hover:shadow-primary-300/60 transition-all duration-300 group-hover:scale-105">
+                    <i data-lucide="sun" class="text-white w-6 h-6"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-lg font-bold tracking-tight text-slate-800 leading-none">ギフテッドスペース</span>
+                    <span class="text-[10px] text-slate-400 font-medium tracking-[0.2em] uppercase">Gifted Space</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-1">
+                <a href="#problem"
+                    class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-300">一人で悩まないで</a>
+                <a href="#service"
+                    class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-300">活動内容</a>
+                <a href="#story"
+                    class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-300">私たちの想い</a>
+                <a href="#faq"
+                    class="px-4 py-2 text-sm font-medium text-slate-600 hover:text-primary-600 hover:bg-primary-50 rounded-full transition-all duration-300">よくある質問</a>
+                <button
+                    class="ml-4 bg-gradient-to-r from-warm-orange to-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-orange-200/50 hover:shadow-orange-300/60 transition-all duration-300 hover:-translate-y-0.5 btn-glow">
+                    相談・お問い合わせ
+                </button>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden p-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors" id="menu-btn"
+                aria-label="メニュー">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl p-8 pt-28 hidden flex-col space-y-6 text-center">
+        <a href="#problem"
+            class="mobile-link text-xl font-bold text-slate-700 hover:text-primary-600 py-3 transition-colors">一人で悩まないで</a>
+        <a href="#service"
+            class="mobile-link text-xl font-bold text-slate-700 hover:text-primary-600 py-3 transition-colors">活動内容</a>
+        <a href="#story"
+            class="mobile-link text-xl font-bold text-slate-700 hover:text-primary-600 py-3 transition-colors">私たちの想い</a>
+        <a href="#faq"
+            class="mobile-link text-xl font-bold text-slate-700 hover:text-primary-600 py-3 transition-colors">よくある質問</a>
+        <div class="pt-4">
+            <button
+                class="w-full bg-gradient-to-r from-warm-orange to-amber-500 text-white px-8 py-4 rounded-2xl text-lg font-bold shadow-lg">
+                相談・お問い合わせ
+            </button>
+        </div>
+    </div>
+
+    <!-- 1. Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8 text-center lg:text-left">
+                    <!-- Badge -->
+                    <div
+                        class="reveal inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm text-primary-600 px-5 py-2 rounded-full text-sm font-bold shadow-lg shadow-primary-100/50 border border-primary-100">
+                        <span class="relative flex h-2 w-2">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-500"></span>
+                        </span>
+                        <span>市川市で活動する若者と家族のサードプレイス</span>
+                    </div>
+
+                    <!-- Main Headline -->
+                    <h1
+                        class="reveal text-4xl md:text-5xl lg:text-6xl font-black leading-[1.1] text-slate-900 tracking-tight">
+                        土曜日、<br />
+                        家族以外のだれかと<br />
+                        <span class="gradient-text">話せる場所。</span>
+                    </h1>
+
+                    <!-- Subheadline -->
+                    <p
+                        class="reveal text-lg md:text-xl text-slate-600 leading-relaxed max-w-lg mx-auto lg:mx-0 font-light">
+                        どんな人にも、可能性がある。<br />
+                        生きづらさを抱える若者と家族が、<br class="hidden lg:block" />
+                        自分らしくいられる、静かで温かな居場所。
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div
+                        class="reveal flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center lg:justify-start pt-4">
+                        <button
+                            class="group bg-gradient-to-r from-primary-500 to-primary-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary-200/50 flex items-center justify-center space-x-3 hover:shadow-primary-300/60 transition-all duration-300 hover:-translate-y-1 btn-glow">
+                            <span>活動に参加してみる</span>
+                            <i data-lucide="arrow-right"
+                                class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                        <button
+                            class="bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-2xl font-bold hover:border-primary-300 hover:text-primary-600 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            相談・お問い合わせ
+                        </button>
+                    </div>
+
+                    <!-- Trust Indicators -->
+                    <div class="reveal flex items-center justify-center lg:justify-start space-x-8 pt-8 opacity-70">
+                        <div class="flex items-center space-x-2 text-sm text-slate-500">
+                            <i data-lucide="shield-check" class="w-5 h-5 text-green-500"></i>
+                            <span>専門家連携</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-slate-500">
+                            <i data-lucide="heart-handshake" class="w-5 h-5 text-rose-400"></i>
+                            <span>当事者目線</span>
+                        </div>
+                        <div class="flex items-center space-x-2 text-sm text-slate-500">
+                            <i data-lucide="users" class="w-5 h-5 text-primary-400"></i>
+                            <span>家族サポート</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero Image -->
+                <div class="reveal relative hero-image-container">
+                    <div
+                        class="absolute -inset-4 bg-gradient-to-r from-primary-200 via-purple-200 to-warm-200 rounded-[3rem] blur-3xl opacity-40 animate-pulse-slow">
+                    </div>
+                    <div class="relative rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white/80 bg-white">
+                        <img src="assets/images/hero-main.jpg" alt="温かい雰囲気の中でPCを囲んで談笑する若者たち"
+                            class="w-full h-[400px] md:h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent">
+                        </div>
+
+                        <!-- Floating Card -->
+                        <div class="absolute bottom-6 left-6 right-6 glass rounded-2xl p-5 shadow-xl">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <p class="text-sm font-bold text-slate-800">次回開催</p>
+                                    <p class="text-xs text-slate-500">毎週土曜日 13:30〜</p>
+                                </div>
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-10 h-10 bg-primary-100 rounded-full flex items-center justify-center">
+                                        <i data-lucide="calendar" class="w-5 h-5 text-primary-600"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 scroll-indicator hidden md:block">
+            <div class="flex flex-col items-center space-y-2 text-slate-400">
+                <span class="text-xs tracking-widest uppercase">Scroll</span>
+                <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Problem & Empathy Section -->
+    <section id="problem" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-50 to-purple-50 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center space-x-2 text-primary-600 text-sm font-bold mb-6">
+                    <div class="decoration-dot"></div>
+                    <span class="tracking-widest uppercase">Message</span>
+                    <div class="decoration-dot"></div>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black mb-6 text-slate-900">
+                    「一人で抱え込んで<br class="md:hidden" />いませんか？」
+                </h2>
+                <p class="text-slate-600 leading-relaxed text-lg max-w-2xl mx-auto">
+                    外に出るのが怖い。将来が不安。誰かに相談したいけれど、きっかけがない。<br class="hidden md:block" />
+                    そんな孤独や息苦しさを、私たちはそのまま受け止めます。
+                </p>
+            </div>
+
+            <!-- Experience Card -->
+            <div
+                class="reveal premium-card bg-gradient-to-br from-warm-50 via-orange-50 to-amber-50 p-8 md:p-12 rounded-[2rem] border border-orange-100 relative overflow-hidden shadow-lg">
+                <div class="absolute top-0 right-0 p-8 opacity-10">
+                    <i data-lucide="heart" class="w-32 h-32 text-warm-orange"></i>
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-orange-200 to-transparent rounded-full blur-2xl opacity-30">
+                </div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-warm-orange to-amber-500 rounded-2xl flex items-center justify-center shadow-lg">
+                            <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-800">設立者の経験から</p>
+                            <p class="text-sm text-slate-500">Founder's Story</p>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-700 leading-relaxed text-base md:text-lg">
+                        高校卒業後、20代前半を誰とも交流なく過ごしました。居場所を探すことすら困難だったあの頃の自分。だからこそ、今あなたが感じている<strong
+                            class="text-warm-orange">「不安」</strong>や<strong
+                            class="text-warm-orange">「見つからない」</strong>という気持ちに、心から寄り添いたいと思っています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Program & Activities Section -->
+    <section id="service" class="py-24 md:py-32 bg-gradient-to-b from-slate-50/50 to-white relative overflow-hidden">
+        <div
+            class="absolute top-1/4 left-0 w-64 h-64 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full blur-3xl opacity-40">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-0 w-64 h-64 bg-gradient-to-r from-warm-100 to-orange-100 rounded-full blur-3xl opacity-40">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <div class="inline-flex items-center space-x-2 text-primary-600 text-sm font-bold mb-6">
+                    <div class="decoration-dot"></div>
+                    <span class="tracking-widest uppercase">Programs</span>
+                    <div class="decoration-dot"></div>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black mb-6 text-slate-900">ギフテッドスペースの活動</h2>
+                <p class="text-slate-500 text-lg max-w-xl mx-auto">最新の技術は、あなたの「表現」を助ける優しい道具です。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Activity 1 -->
+                <div
+                    class="reveal premium-card bg-white p-8 md:p-10 rounded-[2rem] shadow-lg border border-slate-100 group">
+                    <div class="icon-container w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="sparkles" class="w-8 h-8 text-purple-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">AIバイブコーディング</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        難しいプログラミング用語は不要。あなたの「こんなものを作りたい」という感性をAIに伝えるだけで、実際に動くツールやアートを作成できます。
+                    </p>
+                    <div
+                        class="mt-6 flex items-center text-primary-600 font-medium text-sm group-hover:text-purple-600 transition-colors">
+                        <span>詳しく見る</span>
+                        <i data-lucide="arrow-right"
+                            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Activity 2 -->
+                <div class="reveal premium-card bg-white p-8 md:p-10 rounded-[2rem] shadow-lg border border-slate-100 group"
+                    style="animation-delay: 0.1s">
+                    <div class="icon-container w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="layout" class="w-8 h-8 text-primary-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">ホームページ作成</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        自分だけのポートフォリオや、興味のあることを発信するサイトを一緒に作ります。デジタル上に「自分の居場所」を築く楽しさを体験しましょう。
+                    </p>
+                    <div
+                        class="mt-6 flex items-center text-primary-600 font-medium text-sm group-hover:text-primary-700 transition-colors">
+                        <span>詳しく見る</span>
+                        <i data-lucide="arrow-right"
+                            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+
+                <!-- Activity 3 -->
+                <div class="reveal premium-card bg-white p-8 md:p-10 rounded-[2rem] shadow-lg border border-slate-100 group"
+                    style="animation-delay: 0.2s">
+                    <div class="icon-container w-16 h-16 rounded-2xl flex items-center justify-center mb-8">
+                        <i data-lucide="message-circle" class="w-8 h-8 text-warm-orange"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-slate-900">当事者同士の談話</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        PCに向かうだけでなく、お茶を飲みながらゆったり話す時間も大切に。同じような悩みを持つ仲間と、無理のない範囲で交流できます。
+                    </p>
+                    <div
+                        class="mt-6 flex items-center text-primary-600 font-medium text-sm group-hover:text-warm-orange transition-colors">
+                        <span>詳しく見る</span>
+                        <i data-lucide="arrow-right"
+                            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Feature Card -->
+            <div
+                class="reveal bg-gradient-to-br from-primary-600 via-primary-500 to-blue-600 rounded-[2.5rem] p-8 md:p-16 text-white overflow-hidden relative shadow-2xl">
+                <div
+                    class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-purple-400/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
+                </div>
+
+                <div class="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-4xl font-black mb-6 leading-tight">
+                            「挨拶の練習から、<br />ゆっくりで大丈夫。」
+                        </h3>
+                        <p class="text-blue-100 leading-relaxed mb-8 text-lg">
+                            スキル習得はあくまでコミュニケーションのきっかけ。まずは「土曜日に誰かと一緒に過ごす」という安心感を積み重ねていきましょう。
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="shield-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">専門的なサポート体制</p>
+                                    <p class="text-blue-200 text-sm">支援の専門家との連携による安心のバックアップ</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div
+                                    class="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="heart-handshake" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="font-bold">ご家族もサポート</p>
+                                    <p class="text-blue-200 text-sm">当事者だけでなく、ご家族も孤立させないネットワーク</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Schedule Card -->
+                    <div class="glass-dark rounded-3xl p-8 border border-white/10">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i data-lucide="calendar-days" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">活動スケジュール</h4>
+                                <p class="text-blue-200 text-sm">Activity Schedule</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-blue-200">開催日</span>
+                                <span class="font-bold text-lg">毎週土曜日</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-blue-200">時間</span>
+                                <span class="font-bold text-lg">13:30 〜 16:30</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3 border-b border-white/10">
+                                <span class="text-blue-200">場所</span>
+                                <span class="font-bold">市川公民館 等</span>
+                            </div>
+                            <div class="flex justify-between items-center py-3">
+                                <span class="text-blue-200">参加費</span>
+                                <span class="font-bold text-2xl">¥500</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Founder Message Section -->
+    <section id="story" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary-50 via-purple-50 to-warm-50 rounded-full blur-3xl opacity-30">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center space-x-2 text-primary-600 text-sm font-bold mb-6">
+                    <div class="decoration-dot"></div>
+                    <span class="tracking-widest uppercase">Our Story</span>
+                    <div class="decoration-dot"></div>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 leading-tight">
+                    私自身の変化は、<br />
+                    <span class="gradient-text">ある一つの場所</span>から<br />
+                    始まりました。
+                </h2>
+            </div>
+
+            <div class="reveal space-y-8 text-slate-700 leading-relaxed text-lg">
+                <p
+                    class="first-letter:text-5xl first-letter:font-black first-letter:text-primary-500 first-letter:float-left first-letter:mr-3 first-letter:mt-1">
+                    25歳の時、ふなばし地域若者サポートステーションを訪れたことが私の転機でした。自分と同じように就労経験に乏しい仲間と、挨拶の練習からスタートしたあの日々。
+                </p>
+                <p>
+                    当初、自分の体験を語れば誰かの役に立てると思っていました。しかし現実は「うちの子とは違う」といった感想が中心。そこで気づいたのは、直接的な言葉よりも、<strong
+                        class="text-primary-600 font-bold">「心理的安全性のある居場所」を作ることこそが、本当の意味での支援になる</strong>ということでした。
+                </p>
+                <p>
+                    PCやAIでのものづくり、そして何気ない談話。それらが誰かの生きる希望になる。そんな「共鳴する社会」を、市川のこの場所から実現したいと考えています。
+                </p>
+            </div>
+
+            <!-- Founder Card -->
+            <div
+                class="reveal mt-16 flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8 bg-gradient-to-r from-slate-50 to-primary-50/30 p-8 rounded-3xl border border-slate-100">
+                <div
+                    class="w-24 h-24 bg-gradient-to-br from-primary-400 to-purple-500 rounded-3xl p-1 shadow-xl shadow-primary-200/50">
+                    <div class="w-full h-full bg-white rounded-[1.25rem] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200"
+                            alt="代表者" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <p class="font-black text-xl text-slate-900">ギフテッドスペース 代表</p>
+                    <p class="text-slate-500 font-medium">NPO法人 設立準備中</p>
+                    <div class="flex items-center justify-center md:justify-start space-x-2 mt-2">
+                        <span
+                            class="inline-flex items-center px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full">
+                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full mr-1.5"></span>
+                            当事者経験あり
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Trust & Partnership -->
+    <section class="py-16 md:py-20 bg-gradient-to-b from-white to-slate-50/50 border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="reveal text-center">
+                <p class="text-sm font-bold text-slate-400 tracking-[0.3em] uppercase mb-10">Trust & Partnership</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
+                    <div
+                        class="flex items-center space-x-3 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100">
+                        <i data-lucide="building" class="w-5 h-5 text-slate-400"></i>
+                        <span class="text-slate-600 font-medium">市川市 連携予定</span>
+                    </div>
+                    <div
+                        class="flex items-center space-x-3 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-100">
+                        <i data-lucide="external-link" class="w-5 h-5 text-primary-400"></i>
+                        <span class="text-slate-600 font-medium">ふなばし地域若者サポートステーション</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. FAQ Section -->
+    <section id="faq" class="py-24 md:py-32 bg-white relative overflow-hidden">
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-warm-50 to-orange-50 rounded-full blur-3xl opacity-50">
+        </div>
+
+        <div class="max-w-3xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="inline-flex items-center space-x-2 text-primary-600 text-sm font-bold mb-6">
+                    <div class="decoration-dot"></div>
+                    <span class="tracking-widest uppercase">FAQ</span>
+                    <div class="decoration-dot"></div>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900">よくあるご質問</h2>
+            </div>
+
+            <div class="space-y-4">
+                <div
+                    class="reveal faq-item bg-gradient-to-r from-slate-50 to-primary-50/30 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm">
+                    <h4 class="font-bold flex items-start space-x-4 mb-4 text-slate-900">
+                        <span class="w-8 h-8 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-primary-600"></i>
+                        </span>
+                        <span>PCが全く触れなくても大丈夫ですか？</span>
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed pl-12">
+                        もちろんです。電源の入れ方から、AIとの楽しいお喋りまで、あなたのペースに合わせます。挨拶から始まるスモールステップを大切にしています。
+                    </p>
+                </div>
+
+                <div class="reveal faq-item bg-gradient-to-r from-slate-50 to-warm-50/30 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm"
+                    style="animation-delay: 0.1s">
+                    <h4 class="font-bold flex items-start space-x-4 mb-4 text-slate-900">
+                        <span class="w-8 h-8 bg-warm-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-warm-orange"></i>
+                        </span>
+                        <span>家族だけの相談も可能ですか？</span>
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed pl-12">
+                        はい、可能です。当事者だけでなく、ご家族も孤立しないことが大切です。まずはご家族だけでお話を聞かせていただくことも歓迎しています。
+                    </p>
+                </div>
+
+                <div class="reveal faq-item bg-gradient-to-r from-slate-50 to-purple-50/30 p-6 md:p-8 rounded-2xl border border-slate-100 shadow-sm"
+                    style="animation-delay: 0.2s">
+                    <h4 class="font-bold flex items-start space-x-4 mb-4 text-slate-900">
+                        <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="help-circle" class="w-4 h-4 text-purple-600"></i>
+                        </span>
+                        <span>活動への途中参加や退室はできますか？</span>
+                    </h4>
+                    <p class="text-slate-600 leading-relaxed pl-12">
+                        はい、自由です。その日の体調や気分に合わせて、無理のない範囲で過ごしていただける場所を目指しています。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Final CTA Section -->
+    <section
+        class="py-24 md:py-32 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary-500 rounded-full blur-[150px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-warm-orange rounded-full blur-[150px]"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="reveal space-y-8">
+                <div
+                    class="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white/80 px-5 py-2 rounded-full text-sm font-bold border border-white/10">
+                    <i data-lucide="sun" class="w-4 h-4 text-warm-400"></i>
+                    <span>一歩、ここから</span>
+                </div>
+
+                <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                    自分らしくいられる<br />
+                    居場所を、一緒に。
+                </h2>
+
+                <p class="text-slate-400 text-lg max-w-lg mx-auto">
+                    新しい可能性を、一緒に探してみませんか。<br />
+                    まずは見学・ご相談から、お気軽にご連絡ください。
+                </p>
+
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center pt-8">
+                    <button
+                        class="group bg-gradient-to-r from-warm-orange to-amber-500 text-white px-10 py-5 rounded-2xl font-bold shadow-2xl shadow-orange-500/30 flex items-center justify-center space-x-3 hover:shadow-orange-500/40 transition-all duration-300 hover:-translate-y-1 btn-glow">
+                        <span>見学・相談を予約する</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                    <button
+                        class="bg-white/10 backdrop-blur-sm text-white border border-white/20 px-10 py-5 rounded-2xl font-bold hover:bg-white/20 transition-all duration-300">
+                        お問い合わせ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 bg-gradient-to-tr from-primary-500 to-warm-orange rounded-xl flex items-center justify-center">
+                        <i data-lucide="sun" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="text-lg font-bold text-white">Gifted Space</span>
+                </div>
+
+                <div class="flex items-center space-x-8 text-sm">
+                    <a href="#service" class="hover:text-white transition-colors">活動内容</a>
+                    <a href="#story" class="hover:text-white transition-colors">設立趣旨</a>
+                    <a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                </div>
+
+                <p class="text-xs text-slate-500">&copy; 2024 Gifted Space Ichikawa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Floating Action Button for Mobile -->
+    <div class="md:hidden fixed bottom-6 right-6 z-50">
+        <button
+            class="w-16 h-16 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-2xl flex items-center justify-center shadow-2xl shadow-primary-400/40 active:scale-90 transition-transform">
+            <i data-lucide="message-circle" class="w-7 h-7"></i>
+        </button>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
