@@ -454,11 +454,56 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ---- Responsive ---- */
+
+/* Extra small (< 380px) — iPhone SE, small Android */
+@media (max-width: 380px) {
+    .hero-section { padding-left: 1rem; padding-right: 1rem; }
+    .hero-badge { padding: 6px 10px; font-size: 12px; }
+    .hero-badge .w-4 { width: 14px; height: 14px; }
+    .founder-quote::before { font-size: 4rem; top: -16px; left: -4px; }
+}
+
+/* Small (< 640px) — most phones */
+@media (max-width: 640px) {
+    /* Tighten section padding on mobile */
+    section[class*="py-24"] { padding-top: 4rem; padding-bottom: 4rem; }
+    section[class*="py-20"] { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+
+    /* Activity cards: reduce gradient header height */
+    .activity-card .h-36 { height: 120px; }
+
+    /* CTA section orbs: smaller on mobile */
+    .orb-cta-1 { width: 250px; height: 250px; }
+    .orb-cta-2 { width: 200px; height: 200px; }
+
+    /* Disable hover transforms on touch — they stick on mobile */
+    .activity-card:hover { transform: none; }
+    .bento-card:hover { transform: none; }
+    .vision-card:hover { transform: none; }
+    .promise-card:hover { transform: none; }
+}
+
+/* Medium — tablets portrait */
 @media (max-width: 768px) {
     .orb { opacity: 0.3; }
     .orb-1 { width: 200px; height: 200px; }
     .orb-2 { width: 160px; height: 160px; }
     .orb-3 { width: 140px; height: 140px; }
+}
+
+/* Touch device: disable sticky hover states */
+@media (hover: none) and (pointer: coarse) {
+    .activity-card:hover,
+    .bento-card:hover,
+    .vision-card:hover,
+    .promise-card:hover,
+    .playassess-step:hover,
+    .cta-card:hover {
+        transform: none;
+        box-shadow: var(--shadow-sm);
+    }
+    .activity-card:active { transform: scale(0.98); }
+    .cta-card:active { transform: scale(0.97); }
 }
 
 /* ---- Print ---- */
